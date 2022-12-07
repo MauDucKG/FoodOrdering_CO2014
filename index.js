@@ -1,16 +1,22 @@
 $(".btn-edit").click(function (e) {
-    const name = this.getAttribute('data-bs-name')
-    $("#Edit input[name='name']").val(name);
-    const description = this.getAttribute('data-bs-description')
-    $("#Edit textarea[name='description']").val(description);
-    const price = this.getAttribute('data-bs-price')
-    $("#Edit input[name='price']").val(price);
+    const tenDangNhap = this.getAttribute('data-bs-tenDangNhap')
+    $("#Edit input[name='tenDangNhap']").val(tenDangNhap);
+    const tenKhachHang = this.getAttribute('data-bs-tenKhachHang')
+    $("#Edit input[name='tenKhachHang']").val(tenKhachHang);
+    const diaChi = this.getAttribute('data-bs-diaChi')
+    $("#Edit input[name='diaChi']").val(diaChi);
+    const sdt = this.getAttribute('data-bs-sdt')
+    $("#Edit input[name='sdt']").val(sdt);
+    const anhDaiDien = this.getAttribute('data-bs-anhDaiDien')
+    $("#Edit input[name='anhDaiDien']").val(anhDaiDien);
+    const diemTichLuy = this.getAttribute('data-bs-diemTichLuy')
+    $("#Edit input[name='diemTichLuy']").val(diemTichLuy);
     $('#Edit').modal('show');
 });
 
 $(".btn-delete").click(function (e) {
-    const name = this.getAttribute('data-bs-name')
+    const tenDangNhap = this.getAttribute('data-bs-tenDangNhap')
     //console.log(username);
-    $("#Delete input[name='name']").val(name);
+    $("#Delete input[name='tenDangNhap']").val(tenDangNhap);
     $('#Delete').modal('show');
 });
