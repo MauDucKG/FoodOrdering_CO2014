@@ -11,7 +11,8 @@
 
 <body>
     <div class="container">
-        <h1 class="mt-3">Manage Products</h1>
+        <h1 class="my-3">Manage Products</h1>
+        <a href="../user" class="btn btn-warning float-end">Chuyển đến màn hình quản lí người dùng</a>
         <hr>
         <?php
         if (isset($_GET['err'])) {
