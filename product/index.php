@@ -12,8 +12,8 @@
 
 <body>
     <div class="container">
-        <h1 class="my-3">Manage Products</h1>
         <a href="../user" class="btn btn-warning float-end">Chuyển đến màn hình quản lí người dùng</a>
+        <h1 class="my-3">Manage Products</h1>
         <hr>
         <?php
         if (isset($_GET['err'])) {
@@ -58,6 +58,30 @@
                 </div>
             </div>
         </div>
+        <button class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#fun">Phân loại món ăn theo giá</button>
+        <div class="modal fade" id="fun" tabindex="-1" role="dialog" aria-labelledby="fun" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Phân loại món ăn theo giá</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="fun.php" method="post" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Giá cần phân loại</label>
+                                <input class="form-control my-2" type="number" placeholder="Giá cần phân loại" name="gia" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Thực hiện</button>
+                            <button class="btn btn-primary" type="submit">Thêm mới</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-success mb-3" href="fun1">Phân loại món ăn theo giá (tự động)</a>
         <table class="table table-striped mt-2" id="tab-product">
             <thead>
                 <tr>

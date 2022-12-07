@@ -12,79 +12,11 @@
 
 <body>
     <div class="container">
-        <a href="../product" class="btn btn-warning float-end">Chuyển đến màn hình quản lí sản phẩm</a>
+        <a href="../../product/" class="btn btn-warning float-end mx-2">Chuyển đến màn hình quản lí sản phẩm</a>
+        <a href="../../user" class="btn btn-warning float-end">Chuyển đến màn hình quản lí khách hàng</a>
         <h1 class="my-3">Manage User</h1>
         <hr>
-        <?php
-        if (isset($_GET['err'])) {
-            echo "<div class=\"alert alert-warning alert-dismissible fade show\" role=\"alert\">";
-            echo "<strong>Error: </strong>" . $_GET['err'];
-            echo "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>";
-            echo "</div>";
-        }
-        ?>
-        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#add">Thêm người dùng mới</button>
-        <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Thêm mới</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form action="add.php" method="post" enctype="multipart/form-data">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Tên đăng nhập</label>
-                                <input class="form-control my-2" type="text" placeholder="Tên đăng nhập" name="tenDangNhap" />
-                            </div>
-                            <div class="form-group">
-                                <label>Tên khách hàng</label>
-                                <input class="form-control my-2" type="text" placeholder="Tên khách hàng" name="tenKhachHang" />
-                            </div>
-                            <div class="form-group">
-                                <label>Địa chỉ</label>
-                                <input class="form-control my-2" placeholder="Địa chỉ" name="diaChi" />
-                            </div>
-                            <div class="form-group">
-                                <label>Số điện thoại</label>
-                                <input class="form-control my-2" type="number" placeholder="Số điện thoại" name="sdt" />
-                            </div>
-                            <div class="mb-3">
-                                <label>Ảnh đại diện</label>
-                                <input type="file" class="form-control my-2" name="fileToUpload" id="fileToUpload" required>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Đóng lại</button>
-                            <button class="btn btn-primary" type="submit">Thêm mới</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <button class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#fun">Khách hàng có điểm cao hơn ...</button>
-        <div class="modal fade" id="fun" tabindex="-1" role="dialog" aria-labelledby="fun" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Khách hàng có điểm cao hơn một số nhất định</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form action="fun.php" method="post" enctype="multipart/form-data">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Số điểm</label>
-                                <input class="form-control my-2" type="number" placeholder="Số điểm" name="soDiem" />
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Đóng lại</button>
-                            <button class="btn btn-primary" type="submit">Tìm kiếm</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        <h4 class="text-primary my-4">Danh sách khách hàng có điểm tích lũy lớn hơn <?php echo $_GET['soDiem']?></h4>
         <table class="table table-striped mt-2" id="tab-user">
             <thead>
                 <tr>
@@ -101,8 +33,9 @@
                 <?php
                 require_once('db_connnection.php');
 
+                $soDiem = $_GET['soDiem'];
                 $conn = OpenCon();
-                $query = "SELECT * FROM `khach_hang`;";
+                $query = "CALL point_khach_hang($soDiem);";
 
                 $result = $conn->query($query);
 
