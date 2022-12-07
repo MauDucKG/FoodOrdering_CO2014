@@ -16,3 +16,6 @@ $(".btn-delete").click(function (e) {
     $("#Delete input[name='tenMonAn']").val(tenMonAn);
     $('#Delete').modal('show');
 });
+$(document).ready(function () {
+    $('#tab-product').DataTable();
+});

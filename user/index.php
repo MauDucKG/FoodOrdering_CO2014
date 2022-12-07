@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Food Ordering</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
@@ -22,7 +23,7 @@
             echo "</div>";
         }
         ?>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add">Thêm người dùng mới</button>
+        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#add">Thêm người dùng mới</button>
         <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -61,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <table class="table table-striped mt-2">
+        <table class="table table-striped mt-2" id="tab-user">
             <thead>
                 <tr>
                     <th scope="col">Tên đăng nhập</th>
@@ -70,6 +71,7 @@
                     <th scope="col">Số điện thoại</th>
                     <th scope="col">Ảnh đại diện</th>
                     <th scope="col">Điểm tích lũy</th>
+                    <th scope="col">Hành động</th>
                 </tr>
             </thead>
             <tbody>
@@ -94,7 +96,6 @@
                             <td class='align-middle'><?php echo $row['diemTichLuy'] ?></td>
                             <td class='align-middle'>
                                 <div class="d-inline-flex">
-                                    <button class="btn btn-secondary m-1">Read</button>
                                     <button type='button' class='btn-edit btn btn-primary m-1' data-bs-tenDangNhap='<?php echo $row['tenDangNhap'] ?>' data-bs-tenKhachHang='<?php echo $row['tenKhachHang'] ?>' data-bs-diaChi='<?php echo $row['diaChi'] ?>' data-bs-sdt='<?php echo $row['sdt'] ?>' data-bs-anhDaiDien='<?php echo $row['anhDaiDien'] ?>' data-bs-diemTichLuy='<?php echo $row['diemTichLuy'] ?>' data-bs-target='#Edit' data-bs-toggle='modal'>Edit</button>
                                     <button type='button' class='btn-delete btn btn-danger m-1' data-bs-tenDangNhap='<?php echo $row['tenDangNhap'] ?>' data-bs-target='#Delete' data-bs-toggle='modal'>Delete</button>
                                 </div>
@@ -118,7 +119,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Tên đăng nhập</label>
-                                <input class="form-control my-2" type="text" placeholder="Tên đăng nhập" name="tenDangNhap" disabled/>
+                                <input class="form-control my-2" type="text" placeholder="Tên đăng nhập" name="tenDangNhap" disabled />
                             </div>
                             <div class="form-group">
                                 <label>Tên khách hàng</label>
@@ -163,7 +164,7 @@
                     </div>
                     <form action="delete.php" method="post">
                         <div class="modal-body">
-                            <input type="text" name="tenDangNhap" class="form-control my-2" disabled/>
+                            <input type="text" name="tenDangNhap" class="form-control my-2" disabled />
                             <p>Bạn chắc chưa ?</p>
                         </div>
                         <div class="modal-footer">
@@ -177,6 +178,9 @@
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
     <script src="index.js"></script>
 </body>
 

@@ -20,3 +20,6 @@ $(".btn-delete").click(function (e) {
     $("#Delete input[name='tenDangNhap']").val(tenDangNhap);
     $('#Delete').modal('show');
 });
+$(document).ready(function () {
+    $('#tab-user').DataTable();
+});

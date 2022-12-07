@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Food Ordering</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
@@ -22,7 +23,7 @@
             echo "</div>";
         }
         ?>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add">Thêm món ăn mới</button>
+        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#add">Thêm món ăn mới</button>
         <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -38,11 +39,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Mã món ăn</label>
-                                <input class="form-control my-2" type="text" placeholder="Mã món ăn" name="maMonAn"/>
+                                <input class="form-control my-2" type="text" placeholder="Mã món ăn" name="maMonAn" />
                             </div>
                             <div class="form-group">
                                 <label>Mô tả món ăn</label>
-                                <textarea class="form-control my-2" placeholder="Mô tả món ăn" name="moTaMonan" style="height: 150px;"/></textarea>
+                                <textarea class="form-control my-2" placeholder="Mô tả món ăn" name="moTaMonan" style="height: 150px;" /></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Giá niêm yết</label>
@@ -57,13 +58,14 @@
                 </div>
             </div>
         </div>
-        <table class="table table-striped mt-2">
+        <table class="table table-striped mt-2" id="tab-product">
             <thead>
                 <tr>
                     <th scope="col">Tên món ăn</th>
                     <th scope="col">Mã món ăn</th>
                     <th scope="col">Mô tả món ăn</th>
                     <th scope="col">Giá niêm yết</th>
+                    <th scope="col">Hành động</th>
                 </tr>
             </thead>
             <tbody>
@@ -86,7 +88,7 @@
                             <td class='align-middle'><?php echo $row['giaNiemYet'] ?></td>
                             <td class='align-middle'>
                                 <div class="d-inline-flex">
-                                    <button class="btn btn-secondary m-1">Read</button>
+                                    <a class="btn btn-secondary m-1" href="../view/view_detail/index.php?maMonAn=<?php echo $row['maMonAn'] ?>">Read</a>
                                     <button type='button' class='btn-edit btn btn-primary m-1' data-bs-tenMonAn='<?php echo $row['tenMonAn'] ?>' data-bs-maMonAn='<?php echo $row['maMonAn'] ?>' data-bs-moTaMonan='<?php echo $row['moTaMonan'] ?>' data-bs-giaNiemYet='<?php echo $row['giaNiemYet'] ?>' data-bs-target='#Edit' data-bs-toggle='modal'>Edit</button>
                                     <button type='button' class='btn-delete btn btn-danger m-1' data-bs-tenMonAn='<?php echo $row['tenMonAn'] ?>' data-bs-target='#Delete' data-bs-toggle='modal'>Delete</button>
                                 </div>
@@ -114,11 +116,11 @@
                             </div>
                             <div class="form-group">
                                 <label>Mã món ăn</label>
-                                <input class="form-control my-2" type="text" placeholder="Mã món ăn" name="maMonAn" disabled/>
+                                <input class="form-control my-2" type="text" placeholder="Mã món ăn" name="maMonAn" disabled />
                             </div>
                             <div class="form-group">
                                 <label>Mô tả món ăn</label>
-                                <textarea class="form-control my-2" placeholder="Mô tả món ăn" name="moTaMonan" style="height: 150px;"/></textarea>
+                                <textarea class="form-control my-2" placeholder="Mô tả món ăn" name="moTaMonan" style="height: 150px;" /></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Giá niêm yết</label>
@@ -143,7 +145,7 @@
                     </div>
                     <form action="delete.php" method="post">
                         <div class="modal-body">
-                            <input type="text" name="tenMonAn" class="form-control my-2" disabled/>
+                            <input type="text" name="tenMonAn" class="form-control my-2" disabled />
                             <p>Bạn chắc chưa ?</p>
                         </div>
                         <div class="modal-footer">
@@ -157,6 +159,9 @@
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
     <script src="index.js"></script>
 </body>
 
