@@ -1,9 +1,9 @@
 <?php
 require_once('db_connnection.php');
-$tenDangNhap = $_POST['tenDangNhap'];
+$maMonAn = $_POST['maMonAn'];
 
 $conn = OpenCon();
-$query = "CALL Delete_khach_hang('$tenDangNhap')";
+$query = "CALL Delete_mon_an('$maMonAn')";
 
 if ($conn->query($query) === TRUE) {
     echo "Successfully";

@@ -18,7 +18,7 @@
                     <p class='lead text-muted'>Ở đây sẽ liệt kê các sản phẩm chính của trang web, bao gồm cả ảnh vào nhà hàng đang chế biến nó</p>
                     <p>
                         <a href='#' class='btn btn-primary my-2'>Đến giỏ hàng</a>
-                        <a href='#' class='btn btn-secondary my-2'>Trở lại đăng nhập</a>
+                        <a href='../' class='btn btn-secondary my-2'>Trở lại đăng nhập</a>
                     </p>
                 </div>
             </div>
@@ -47,6 +47,7 @@
 
                             $result1 = $conn->query($query);
                             $result2 = $result1->fetch_assoc()['anhMonAn'];
+                            
                             echo "<div class='col'>
                         <div class='card shadow-sm'>
                             <img src='$result2' alt=''>

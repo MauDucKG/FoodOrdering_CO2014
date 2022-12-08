@@ -26,7 +26,6 @@
                     <th scope="col">Số điện thoại</th>
                     <th scope="col">Ảnh đại diện</th>
                     <th scope="col">Điểm tích lũy</th>
-                    <th scope="col">Hành động</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,14 +47,8 @@
                             <td class='align-middle'><?php echo $row['tenKhachHang'] ?></td>
                             <td class='align-middle'><?php echo $row['diaChi'] ?></td>
                             <td class='align-middle'><?php echo $row['sdt'] ?></td>
-                            <td><img src='<?php echo $row['anhDaiDien'] ?>' class='border rounded-circle p-1' width='72' height='72'></td>
+                            <td><img src='../<?php echo $row['anhDaiDien'] ?>' class='border rounded-circle p-1' width='72' height='72'></td>
                             <td class='align-middle'><?php echo $row['diemTichLuy'] ?></td>
-                            <td class='align-middle'>
-                                <div class="d-inline-flex">
-                                    <button type='button' class='btn-edit btn btn-primary m-1' data-bs-tenDangNhap='<?php echo $row['tenDangNhap'] ?>' data-bs-tenKhachHang='<?php echo $row['tenKhachHang'] ?>' data-bs-diaChi='<?php echo $row['diaChi'] ?>' data-bs-sdt='<?php echo $row['sdt'] ?>' data-bs-anhDaiDien='<?php echo $row['anhDaiDien'] ?>' data-bs-diemTichLuy='<?php echo $row['diemTichLuy'] ?>' data-bs-target='#Edit' data-bs-toggle='modal'>Edit</button>
-                                    <button type='button' class='btn-delete btn btn-danger m-1' data-bs-tenDangNhap='<?php echo $row['tenDangNhap'] ?>' data-bs-target='#Delete' data-bs-toggle='modal'>Delete</button>
-                                </div>
-                            </td>
                         </tr>
                 <?php
                     }

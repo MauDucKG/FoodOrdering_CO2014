@@ -142,7 +142,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Tên đăng nhập</label>
-                                <input class="form-control my-2" type="text" placeholder="Tên đăng nhập" name="tenDangNhap" disabled />
+                                <input class="form-control my-2" type="text" placeholder="Tên đăng nhập" name="tenDangNhap" readonly />
                             </div>
                             <div class="form-group">
                                 <label>Tên khách hàng</label>
@@ -187,7 +187,7 @@
                     </div>
                     <form action="delete.php" method="post">
                         <div class="modal-body">
-                            <input type="text" name="tenDangNhap" class="form-control my-2" disabled />
+                            <input type="text" name="tenDangNhap" class="form-control my-2" readonly />
                             <p>Bạn chắc chưa ?</p>
                         </div>
                         <div class="modal-footer">

@@ -6,7 +6,7 @@ $moTaMonan = $_POST['moTaMonan'];
 $giaNiemYet = $_POST['giaNiemYet'];
 
 $conn = OpenCon();
-$query = "CALL Update_khach_hang('$tenDangNhap', '$tenKhachHang', '$diaChi', '$sdt', '$target_file', '$diemTichLuy');";
+$query = "CALL Update_mon_an('$tenMonAn', '$maMonAn', '$moTaMonan', '$giaNiemYet');";
 if ($conn->query($query) === TRUE) {
     echo "Successfully";
     header('Location: index.php');

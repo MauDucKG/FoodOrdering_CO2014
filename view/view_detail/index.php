@@ -71,7 +71,7 @@
                 <div class='card-body'>
                     <h5 class='card-title'>$tenMonAn</h5>
                     <p class='card-text'>$moTaMonan</p>
-                    <a href='#' class='btn btn-primary'>Trở về trang danh sách sản phẩm</a>
+                    <a href='../' class='btn btn-primary'>Trở về trang danh sách sản phẩm</a>
                 </div>
             </div>";
                 }

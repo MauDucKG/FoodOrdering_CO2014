@@ -6,7 +6,7 @@ $moTaMonan = $_POST['moTaMonan'];
 $giaNiemYet = $_POST['giaNiemYet'];
 
 $conn = OpenCon();
-$query = "CALL Add_khach_hang('$tenDangNhap', '$tenKhachHang', '$diaChi,', '$sdt', '$target_file', '$diemTichLuy');";
+$query = "CALL add_mon_an('$tenMonAn', '$maMonAn', '$moTaMonan,', '$giaNiemYet');";
 
 if ($conn->query($query) === TRUE) {
     echo "New record created successfully";

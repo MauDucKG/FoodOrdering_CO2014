@@ -140,7 +140,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Mã món ăn</label>
-                                <input class="form-control my-2" type="text" placeholder="Mã món ăn" name="maMonAn" disabled />
+                                <input class="form-control my-2" type="text" placeholder="Mã món ăn" name="maMonAn" readonly />
                             </div>
                             <div class="form-group">
                                 <label>Mô tả món ăn</label>
@@ -169,7 +169,7 @@
                     </div>
                     <form action="delete.php" method="post">
                         <div class="modal-body">
-                            <input type="text" name="tenMonAn" class="form-control my-2" disabled />
+                            <input type="text" name="tenMonAn" class="form-control my-2" readonly />
                             <p>Bạn chắc chưa ?</p>
                         </div>
                         <div class="modal-footer">
