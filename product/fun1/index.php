@@ -30,7 +30,7 @@
                 require_once('db_connnection.php');
 
                 $conn = OpenCon();
-                $query = "CALL Phan_loai_auto();";
+                $query = "SELECT tenMonAn, giaNiemYet, phan_loai(maMonAn, giaNiemYet) AS phanLoai FROM mon_an ORDER BY giaNiemYet;";
 
                 $result = $conn->query($query);
 
@@ -41,7 +41,7 @@
                         <tr class="justify-content-center">
                             <th class='align-middle' scope="row"><?php echo $row['tenMonAn'] ?></th>
                             <td class='align-middle'><?php echo $row['giaNiemYet'] ?></td>
-                            <td class='align-middle'><?php echo $row['Phan_loai'] ?></td>
+                            <td class='align-middle'><?php echo $row['phanLoai'] ?></td>
                         </tr>
                 <?php
                     }
