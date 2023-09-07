@@ -5,4 +5,4 @@ See more here: http://foodorderkg.ezyro.com
 
 #Mật khẩu: 
 
-Point: 9.5/10
+Score: 9.5/10
